@@ -1,6 +1,6 @@
 package com.springdemo.didemo.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import com.springdemo.didemo.services.GreetingService;
@@ -9,11 +9,7 @@ import com.springdemo.didemo.services.GreetingService;
 public class ConstructorInjectedController {
 	private GreetingService greetingService;
 	
-	/*
-	 * Autowired not required is optional to mention in constructor based dependency
-	 */
-	@Autowired
-	public ConstructorInjectedController(GreetingService greetingService) {
+	public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
 		this.greetingService = greetingService;
 	}
 	
