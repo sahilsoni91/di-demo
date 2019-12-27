@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 import com.springdemo.didemo.controllers.ConstructorInjectedController;
 import com.springdemo.didemo.controllers.MyController;
@@ -13,8 +14,11 @@ import com.springdemo.didemo.controllers.SetterInjectedController;
 
 /*
  * Implements CommandLineRunner interface to run as a console application
+ * If used ComponentScan then it overrides default behavior of Spring Boot and not scan SpringBootApplication
+ * annotation package and sub-packages
  */
 @SpringBootApplication
+@ComponentScan(basePackages = {"com.springdemo.services", "com.springdemo.didemo"})
 public class DiDemoApplication implements CommandLineRunner{
 
 	//	public static void main(String[] args) {

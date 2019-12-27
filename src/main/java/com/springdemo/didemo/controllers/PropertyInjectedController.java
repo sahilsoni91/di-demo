@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-import com.springdemo.didemo.services.GreetingService;
-//import com.springdemo.didemo.services.GreetingServiceImpl;
+import com.springdemo.services.GreetingService;
 
 @Controller
 public class PropertyInjectedController {
