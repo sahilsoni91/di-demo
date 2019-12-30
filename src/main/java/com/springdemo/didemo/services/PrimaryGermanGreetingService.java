@@ -1,16 +1,16 @@
 package com.springdemo.didemo.services;
 
-public class PrimaryGreetingService implements GreetingService {
-	
+public class PrimaryGermanGreetingService implements GreetingService {
+
 	private GreetingRepository greetingRepository;
 
-    public PrimaryGreetingService(GreetingRepository greetingRepository) {
+    public PrimaryGermanGreetingService(GreetingRepository greetingRepository) {
         this.greetingRepository = greetingRepository;
     }
     
 	@Override
 	public String sayGreeting() {
-		return greetingRepository.getEnglishGreeting();
+		return greetingRepository.getGermanGreeting();
 	}
 
 }
