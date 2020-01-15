@@ -1,0 +1,5 @@
+demo:
+    jms:
+        user: sahil_jms
+        pwd: soni_jms
+        jmsurl: "tcp://localhost:61616?jms.useAsyncSend=true"
