@@ -10,6 +10,7 @@ import com.springdemo.didemo.controllers.ConstructorInjectedController;
 import com.springdemo.didemo.controllers.MyController;
 import com.springdemo.didemo.controllers.PropertyInjectedController;
 import com.springdemo.didemo.controllers.SetterInjectedController;
+import com.springdemo.didemo.datasourcebean.FakeDataSource;
 
 /*
  * Implements CommandLineRunner interface to run as a console application
@@ -43,6 +44,12 @@ public class DiDemoApplication implements CommandLineRunner{
 		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
 		System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
 		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
+		
+		System.out.println("Properties File Loading:");
+		FakeDataSource fakeDataSource = (FakeDataSource)ctx.getBean(FakeDataSource.class);
+		System.out.println("URL: " + fakeDataSource.getUrl());
+		System.out.println("Username: " + fakeDataSource.getUser());
+		System.out.println("Password: " + fakeDataSource.getPassword());
 	}
 
 
