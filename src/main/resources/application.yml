@@ -3,3 +3,12 @@ demo:
         user: sahil_jms
         pwd: soni_jms
         jmsurl: "tcp://localhost:61616?jms.useAsyncSend=true"
+
+---
+
+spring:
+    profiles: de
+    
+demo:
+    jms:
+        user: sahil_jms_from_de
