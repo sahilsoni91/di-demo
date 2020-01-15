@@ -11,6 +11,7 @@ import com.springdemo.didemo.controllers.MyController;
 import com.springdemo.didemo.controllers.PropertyInjectedController;
 import com.springdemo.didemo.controllers.SetterInjectedController;
 import com.springdemo.didemo.datasourcebean.FakeDataSource;
+import com.springdemo.didemo.jmsbean.FakeJmsBroker;
 
 /*
  * Implements CommandLineRunner interface to run as a console application
@@ -45,11 +46,17 @@ public class DiDemoApplication implements CommandLineRunner{
 		System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
 		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
 		
-		System.out.println("Properties File Loading:");
+		System.out.println("DataSource Properties File Loading:");
 		FakeDataSource fakeDataSource = (FakeDataSource)ctx.getBean(FakeDataSource.class);
 		System.out.println("URL: " + fakeDataSource.getUrl());
 		System.out.println("Username: " + fakeDataSource.getUser());
 		System.out.println("Password: " + fakeDataSource.getPassword());
+		
+		System.out.println("JMS Properties File Loading:");
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker)ctx.getBean(FakeJmsBroker.class);
+		System.out.println("JMS URL: " + fakeJmsBroker.getUrl());
+		System.out.println("JMS Username: " + fakeJmsBroker.getUser());
+		System.out.println("JMS Password: " + fakeJmsBroker.getPassword());
 	}
 
 
